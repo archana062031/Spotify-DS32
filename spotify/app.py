@@ -27,7 +27,7 @@ with app.app_context():
 def root():
     """Base view"""
 
-    return render_template("base.html", title="Home")
+    return render_template("base.html", title="Song Recommender")
 
 
 @app.route("/recommendations", methods=["GET", "POST"])
@@ -78,7 +78,7 @@ def recommendations_page():
         # Use function from model.py to get recommendations
         recommendations = find_recommendations(user_song_features)
 
-        return render_template("base.html", title="Home", recommendations=recommendations, inputSongName=song_name, inputArtistName=artist_name)
+        return render_template("recommendations.html", title="Recommendations", recommendations=recommendations, inputSongName=song_name, inputArtistName=artist_name)
 
     @app.route('/reset')
     def reset():

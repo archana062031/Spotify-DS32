@@ -1,0 +1,67 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Spotify - {{ title }}</title>
+    <link rel="stylesheet" href="https://unpkg.com/picnic" />
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="brand"><span>Spotify Song Recommendations!</span></a>
+    </nav>
+    <article class="flex three" style="padding: 3em 1em;">
+        <form action="/recommendations" method="post">
+            <div style="display: grid;">
+                <span style="padding-bottom: 10px;">
+                    <input type="text" name="song_name" placeholder="Enter Song Name">
+                </span>
+                <span>
+                    <input type="text" name="artist_name" placeholder="Enter Artist Name">
+                </span>
+
+                <input type="submit" value="Get Recommendations">
+            </div>
+        </form>
+    </article>
+
+    <article class="flex two" style="padding: 3em 1em;">
+        <div>
+            <h2>Recommendations</h2>
+        </div>
+        <div>
+            <h4>Following songs are recommended for Song: {{inputSongName}} and Artist: {{inputArtistName}}</h4>
+        </div>
+
+        <br />
+        {% for item in recommendations %}
+        <p><span class="stack">{{ item[1] }}</span></a>
+            {% endfor %}
+    </article>
+</body>
+
+</html> -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="recommendations">
+    <div>
+        <h1>Recommendations</h1>
+    </div>
+    <div>
+        <p>Following songs are recommended for <b>Song: {{inputSongName}}</b> and <b>Artist: {{inputArtistName}}</b></p>
+    </div>
+
+    <br />
+    {% for item in recommendations %}
+    <ol>{{ item[1] }}</ol>
+    {% endfor %}
+    <div class="container" id=footer>
+        <form action="/">
+            <button type="submit">Go Back</button>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}

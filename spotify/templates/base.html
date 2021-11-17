@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -38,6 +38,149 @@
         <p><span class="stack">{{ item[1] }}</span></a>
             {% endfor %}
     </article>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<title>{{title}}</title>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+        html,
+        body {
+            display: flex;
+            justify-content: center;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 15px;
+        }
+
+        .recommendations,
+        .home {
+            border: 5px solid #F1F1F1;
+        }
+
+        .recommendations {
+            text-align: center;
+            padding: 10px;
+        }
+
+        ol {
+            text-align: left;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 16px 8px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .icon {
+            font-size: 110px;
+            display: flex;
+            justify-content: center;
+            color: #19C151;
+        }
+
+        button {
+            background-color: #19C151;
+            color: white;
+            padding: 14px 0;
+            margin: 10px 0;
+            border: none;
+            cursor: grab;
+            width: 48%;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 18;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 10;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .formcontainer {
+            text-align: center;
+            margin: 24px 50px 12px;
+            width: 450px;
+        }
+
+        .container {
+            padding: 16px 0;
+            text-align: left;
+        }
+
+        .container_button {
+            padding: 16px 0;
+            text-align: center;
+        }
+
+        notes {
+            text-align: center;
+            font-size: 10;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 0;
+            padding-right: 15px;
+        }
+
+        /* Change styles for span on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+        }
+
+        #footer {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    {% block content %}
+    <form class="home" method="POST" action="/recommendations">
+        <h1>Spotify Song Recommender</h1>
+        <h3>Find similar songs based on song & artist!</h3>
+        <div class="icon">
+            <i class="fab fa-spotify"></i>
+        </div>
+        <div class="formcontainer">
+            <div class="container">
+                <label for="song_name"><strong>Song Name</strong></label>
+                <input type="text" name="song_name" placeholder="Enter song name ">
+                <label for="artist_name"><strong>Artist Name</strong></label>
+                <input type="text" name="artist_name" placeholder="Enter artist name">
+                <div class="container" id=footer>
+                    <button type="Submit"><strong>Submit</strong></button>
+                    <div class="notes">
+                        <label>Find the code for this project on
+                            <a href="https://github.com/archana062031/spotify-ds32">my github</a>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    {% endblock %}
 </body>
 
 </html>
