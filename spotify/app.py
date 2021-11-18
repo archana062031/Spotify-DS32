@@ -87,7 +87,7 @@ def recommendations_page():
         # Creates the database file initially.
         DB.create_all()
         # return render_template('base.html', title='Reset Database')
-        return "Reset Database"
+        return render_template('reset.html', title='Reset Database')
 
 
 if __name__ == "__main__":
